@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-N Queens problem: placing N non-attacking queens on an N×N chessboard
+N Queens problem placing N non-attacking queens on an N×N chessboard
 using backtracking algorithm
 """
 
@@ -10,27 +10,28 @@ rows = set()
 solution = []
 methods = []
 
-
-def nqueens(N, column):
-    """Recursive function with backtracking algorithm for N queens problem
+def nqueens(N, row, column):
+    """recursive functhion with backtracking algorithm for N queens problem
 
     Args:
         N (int): board size
+        row (int): current row
         column (int): current column
     """
     if column >= N:
         methods.append(solution.copy())
         return
 
+
     for row in range(N):
-        if (row not in rows and
+        if (row not in rows and 
             row + column not in skew_left and
-                row - column not in skew_right):
+            row - column not in skew_right):
             rows.add(row)
             skew_left.add(row + column)
             skew_right.add(row - column)
             solution.append([row, column])
-            nqueens(N, column + 1)
+            nqueens(N, 0, column + 1)
             rows.remove(row)
             skew_right.remove(row - column)
             skew_left.remove(row + column)
