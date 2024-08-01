@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-N Queens problem placing N non-attacking queens on an N×N chessboard
+N Queens problem: placing N non-attacking queens on an N×N chessboard
 using backtracking algorithm
 """
 
@@ -10,13 +10,11 @@ rows = set()
 solution = []
 methods = []
 
-
-def nqueens(N, row, column):
-    """recursive functhion with backtracking algorithm for N queens problem
+def nqueens(N, column):
+    """Recursive function with backtracking algorithm for N queens problem
 
     Args:
         N (int): board size
-        row (int): current row
         column (int): current column
     """
     if column >= N:
@@ -24,37 +22,38 @@ def nqueens(N, row, column):
         return
 
     for row in range(N):
-        if (row not in rows and
+        if (row not in rows and 
             row + column not in skew_left and
-                row - column not in skew_right):
+            row - column not in skew_right):
             rows.add(row)
             skew_left.add(row + column)
             skew_right.add(row - column)
             solution.append([row, column])
-            nqueens(N, 0, column + 1)
+            nqueens(N, column + 1)
             rows.remove(row)
             skew_right.remove(row - column)
             skew_left.remove(row + column)
             solution.remove([row, column])
 
-
 if __name__ == "__main__":
     """
-    Execute Nqueens solution
+    Execute N Queens solution
     """
     import sys
     if len(sys.argv) != 2:
         print("Usage: nqueens N")
         sys.exit(1)
-    board = eval(sys.argv[1])
-
-    if not isinstance(board, int):
+    
+    try:
+        board = int(sys.argv[1])
+    except ValueError:
         print("N must be a number")
         sys.exit(1)
 
     if board < 4:
         print("N must be at least 4")
         sys.exit(1)
-    nqueens(board, 0, 0)
+
+    nqueens(board, 0)
     for item in methods:
         print(item)
