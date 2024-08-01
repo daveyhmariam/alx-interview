@@ -10,6 +10,7 @@ rows = set()
 solution = []
 methods = []
 
+
 def nqueens(N, column):
     """Recursive function with backtracking algorithm for N queens problem
 
@@ -22,9 +23,9 @@ def nqueens(N, column):
         return
 
     for row in range(N):
-        if (row not in rows and 
+        if (row not in rows and
             row + column not in skew_left and
-            row - column not in skew_right):
+                row - column not in skew_right):
             rows.add(row)
             skew_left.add(row + column)
             skew_right.add(row - column)
@@ -35,6 +36,7 @@ def nqueens(N, column):
             skew_left.remove(row + column)
             solution.remove([row, column])
 
+
 if __name__ == "__main__":
     """
     Execute N Queens solution
@@ -43,7 +45,7 @@ if __name__ == "__main__":
     if len(sys.argv) != 2:
         print("Usage: nqueens N")
         sys.exit(1)
-    
+
     try:
         board = int(sys.argv[1])
     except ValueError:
