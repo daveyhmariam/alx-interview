@@ -26,4 +26,4 @@ def makeChange(coins, total):
             mod %= elm
             if mod == 0:
                 return sum
-        return -1
+    return -1
