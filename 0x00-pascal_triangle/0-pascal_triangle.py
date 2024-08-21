@@ -2,10 +2,9 @@
 """
 pascal triangle interview question
 """
-from typing import List
 
 
-def pascal_triangle(n) -> List[List[int]]:
+def pascal_triangle(n):
     """Pascal triangle list of lists
     formula nCm = n-1Cm-1 + n-1Cm
 
