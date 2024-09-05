@@ -17,10 +17,11 @@ def isWinner(x, nums):
     m = 0
     for i in nums:
         p = findPrime(i)
-        if len(nums) % 2 == 1:
+        if len(p) % 2 == 1:
             m += 1
         else:
             b += 1
+    print(m, b)
     if m > b:
         return "Maria"
     if m < b:
