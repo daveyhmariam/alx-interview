@@ -1,8 +1,3 @@
-# Curriculum
-## Short Specializations
-
-**Average: 63.75%**
-
 ### 0x0A. Prime Game
 - **Algorithm**
 - **Python**
