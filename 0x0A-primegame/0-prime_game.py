@@ -13,13 +13,20 @@ def isWinner(x, nums):
 
     Return (str): The name of the player won the most
     """
+    b = 0
+    m = 0
     for i in nums:
         p = findPrime(i)
-        x -= len(p) % 2
-    if x < len(nums) // 2:
+        if len(nums) % 2 == 1:
+            m += 1
+        else:
+            b += 1
+    if m > b:
         return "Maria"
-    return 'Ben'
-
+    if m < b:
+        return 'Ben'
+    else:
+        None
 
 def findPrime(n):
     """Returns prime numbers upto n
