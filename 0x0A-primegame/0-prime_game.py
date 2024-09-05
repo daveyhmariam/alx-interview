@@ -19,7 +19,7 @@ def isWinner(x, nums):
     m = 0
     for i in nums:
         p = findPrime(i)
-        if len(p) % 2 == 1:
+        if p % 2 == 1:
             m += 1
         else:
             b += 1
@@ -30,6 +30,7 @@ def isWinner(x, nums):
     else:
         return None
 
+
 def findPrime(n):
     """Returns prime numbers upto n
 
@@ -38,13 +39,11 @@ def findPrime(n):
     """
     n += 1
     arr = [True] * n
-    primes = []
+    primes = 0
     for i in range(2, n):
         if arr[i]:
-            primes.append(i)
+            primes += 1
             if i * i < n:
                 for j in range(i * i, n, i):
                     arr[j] = False
     return primes
-
-print(findPrime(100))
