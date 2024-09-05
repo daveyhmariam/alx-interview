@@ -13,7 +13,7 @@ def isWinner(x, nums):
 
     Return (str): The name of the player won the most
     """
-    if x <= 0 or not nums:
+    if x == 0 or not nums:
         return None
     b = 0
     m = 0
