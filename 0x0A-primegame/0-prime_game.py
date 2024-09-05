@@ -28,7 +28,7 @@ def isWinner(x, nums):
     if m < b:
         return 'Ben'
     else:
-        None
+        return None
 
 def findPrime(n):
     """Returns prime numbers upto n
