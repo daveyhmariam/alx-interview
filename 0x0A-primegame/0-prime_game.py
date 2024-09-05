@@ -79,7 +79,3 @@ def isWinner(x, nums):
     else:
         return None
 
-# Example usage
-x = 3
-nums = [4, 5, 1]
-print(isWinner(x, nums))  # Output: "Ben"
