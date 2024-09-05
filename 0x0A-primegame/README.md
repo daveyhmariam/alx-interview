@@ -1,12 +1,5 @@
 ### 0x0A. Prime Game
-- **Algorithm**
-- **Python**
-- **Weight:** 1
-- **Project Timeline:** 
-  - Start: Sep 2, 2024, 6:00 AM
-  - End: Sep 6, 2024, 6:00 AM
-  - Checker Released: Sep 3, 2024, 6:00 AM
-  - Auto Review: At the deadline
+
 
 ### Project Overview:
 For this project, you will need to leverage your understanding of **prime numbers**, **game theory**, and **algorithm optimization** to solve a competitive game scenario. The challenge involves determining the winner of a game based on the strategic removal of prime numbers and their multiples from a set of consecutive integers.
